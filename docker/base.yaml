@@ -1,0 +1,21 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  zookeeper_base:
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/zookeeper
+    volumes:
+      - ../jdk:/var/zookeeper/jdk
+      - ../zookeeper/bin:/var/zookeeper/bin
+      - ../zookeeper/lib:/var/zookeeper/lib
+      - ../zookeeper/conf:/var/zookeeper/conf
+      - ../bin/install.sh:/var/zookeeper/install.sh
+    networks:
+      - zookeeper_test
+    
