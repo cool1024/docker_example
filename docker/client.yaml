@@ -1,0 +1,24 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  zookeeper_client:
+    container_name: zc.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/zookeeper
+    environment:
+     - JAVA_HOME=/var/zookeeper/jdk
+    volumes:
+      - ../jdk:/var/zookeeper/jdk
+      - ../zookeeper/bin:/var/zookeeper/bin
+      - ../zookeeper/lib:/var/zookeeper/lib
+      - ../zookeeper/conf:/var/zookeeper/conf
+      - ../bin/client.sh:/var/zookeeper/client.sh
+    networks:
+      - zookeeper_test
+    

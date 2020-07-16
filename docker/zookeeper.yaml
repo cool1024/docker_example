@@ -1,14 +1,11 @@
 version: '2'
 
-networks:
-  zookeeper_test:
-
 services:
   zookeeper_1:
     extends:
       file: base.yaml
       service: zookeeper_base
-    container_name: zs.example1.com
+    container_name: zs1.example.com
     volumes:
       - ../disk/zs1:/var/zookeeper
 
@@ -16,7 +13,7 @@ services:
     extends:
       file: base.yaml
       service: zookeeper_base
-    container_name: zs.example2.com
+    container_name: zs2.example.com
     volumes:
       - ../disk/zs2:/var/zookeeper
 
@@ -24,7 +21,7 @@ services:
     extends:
       file: base.yaml
       service: zookeeper_base
-    container_name: zs.example3.com
+    container_name: zs3.example.com
     volumes:
       - ../disk/zs3:/var/zookeeper
     
