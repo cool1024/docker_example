@@ -34,12 +34,13 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit"
 
+    implementation 'com.google.auto.service:auto-service:1.0-rc2'
     implementation "org.apache.zookeeper:zookeeper:$zookeeper_version"
 }
 
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
-        // freeCompilerArgs = listOf("-Xjsr305=strict")
+        freeCompilerArgs = ["-Xjsr305=strict"]
     }
 }
