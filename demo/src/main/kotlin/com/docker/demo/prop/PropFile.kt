@@ -1,6 +1,6 @@
 package com.docker.demo.prop
 
-@Target(AnnotationTarget.PROPERTY)
-@Retention(AnnotationRetention.SOURCE)
+@Target(AnnotationTarget.CLASS)
+@Retention(AnnotationRetention.RUNTIME)
 @MustBeDocumented
-annotation class PropFile(val fileName: String = "")
+annotation class PropFile(val fileName: String)
