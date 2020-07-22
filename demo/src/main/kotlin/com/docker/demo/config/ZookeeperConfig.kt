@@ -1,4 +1,4 @@
-package com.docker.demo
+package com.docker.demo.config
 
 import com.docker.demo.prop.PropFile
 import com.docker.demo.prop.PropItem
@@ -8,5 +8,5 @@ data class ZookeeperConfig(
     @PropItem(keyName = "connectString")
     var connectString: String,
     @PropItem(keyName = "sessionTimeOut")
-    var sessionTimeOut: String
+    var sessionTimeOut: Int
 )

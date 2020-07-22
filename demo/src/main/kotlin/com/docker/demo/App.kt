@@ -1,17 +1,23 @@
 package com.docker.demo
 
+import com.docker.demo.config.ZookeeperConfig
 import com.docker.demo.prop.RunTimeProp
 import org.apache.zookeeper.ZooKeeper
 
 object App {
 
+    private val zookeeperConfig = RunTimeProp.config<ZookeeperConfig>()!!
+
     @JvmStatic
     fun main(args: Array<String>) {
         println("App run...")
-        RunTimeProp.getConfigObject(ZookeeperConfig::class.java)
+
+        createZookeeperHandle()
     }
 
     private fun createZookeeperHandle() {
-        // ZooKeeper(ZookeeperConfig.connectString)
+        ZooKeeper(zookeeperConfig.connectString, zookeeperConfig.sessionTimeOut) { event ->
+            print(event)
+        }
     }
 }
