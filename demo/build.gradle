@@ -28,13 +28,21 @@ repositories {
     }
 }
 
+//jar {
+//    from {
+//        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
+//    manifest {
+//        attributes 'Main-Class': 'com.docker.demo.App'
+//    }
+//}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     testImplementation "org.jetbrains.kotlin:kotlin-test"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit"
 
-    implementation 'com.google.auto.service:auto-service:1.0-rc2'
     implementation "org.apache.zookeeper:zookeeper:$zookeeper_version"
 }
 

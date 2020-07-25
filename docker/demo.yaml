@@ -1,0 +1,20 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  zookeeper_client:
+    container_name: demo.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/zookeeper
+    volumes:
+      - ../disk/demo:/var/zookeeper
+      - ../jdk:/var/zookeeper/jdk
+      - ../bin/demo.sh:/var/zookeeper/demo.sh
+    networks:
+      - zookeeper_test
+    

@@ -1,0 +1,4 @@
+server.1=zs1.example.com:3000:4000:participant
+server.2=zs2.example.com:3000:4000:participant
+server.3=zs3.example.com:3000:4000:participant
+version=300000000

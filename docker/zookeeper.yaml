@@ -1,5 +1,8 @@
 version: '2'
 
+networks:
+  zookeeper_test:
+
 services:
   zookeeper_1:
     extends:
