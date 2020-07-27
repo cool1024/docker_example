@@ -2,6 +2,7 @@ package com.docker.demo
 
 import com.docker.demo.config.ZookeeperConfig
 import com.docker.demo.prop.RunTimeProp
+import com.docker.demo.server.Master
 import org.apache.zookeeper.ZooKeeper
 import org.slf4j.LoggerFactory
 
@@ -14,10 +15,9 @@ object App {
     @JvmStatic
     fun main(args: Array<String>) {
         println("App run...")
-
-        val zooKeeper = createZookeeperHandle()
-        Thread.sleep(6000)
-        zooKeeper.close()
+        Master(createZookeeperHandle()).init()
+        Master(createZookeeperHandle()).init()
+        Thread.sleep(1000000)
     }
 
     private fun createZookeeperHandle(): ZooKeeper {
