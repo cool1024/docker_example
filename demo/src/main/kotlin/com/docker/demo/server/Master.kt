@@ -12,8 +12,11 @@ import kotlin.random.Random
 class Master(zookeeper: ZooKeeper) : Server(zookeeper) {
 
     init {
-        create(MASTER_NODE_PATH)
+        if (!create(MASTER_NODE_PATH)) {
+            throw ServerCreateError()
+        }
     }
+
 
 //    private fun becomeMaster(zookeeper: ZooKeeper, masterId: String) {
 //        try {

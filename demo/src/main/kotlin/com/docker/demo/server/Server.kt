@@ -4,6 +4,7 @@ import org.apache.zookeeper.CreateMode
 import org.apache.zookeeper.KeeperException
 import org.apache.zookeeper.ZooDefs
 import org.apache.zookeeper.ZooKeeper
+import java.lang.RuntimeException
 import kotlin.random.Random
 
 open class Server(protected val zookeeper: ZooKeeper) : LoggerTool() {
@@ -37,4 +38,6 @@ open class Server(protected val zookeeper: ZooKeeper) : LoggerTool() {
     fun close() = zookeeper.close()
 
     fun getId() = serverId
+
+    class ServerCreateError : RuntimeException()
 }
