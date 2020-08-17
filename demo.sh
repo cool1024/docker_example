@@ -12,10 +12,15 @@ cp ./demo/out/artifacts/demo_main_jar/demo.main.jar ./disk/demo
 
 
 # 尝试关闭后启动容器
-docker-compose -f ./docker/zookeeper.yaml -f ./docker/demo.yaml down
-docker-compose -f ./docker/zookeeper.yaml -f ./docker/demo.yaml up -d
+docker-compose  \
+-f ./docker/zookeeper.yaml \
+-f ./docker/demo.yaml \
+-f ./docker/client.yaml \
+down
 
-docker exec -it zs1.example.com /bin/bash -c './install.sh 1'
-docker exec -it zs2.example.com /bin/bash -c './install.sh 2'
-docker exec -it zs3.example.com /bin/bash -c './install.sh 3'
-docker exec -it demo.example.com /bin/bash -c './demo.sh'
+docker-compose -f ./docker/zookeeper.yaml -f ./docker/client.yaml -f ./docker/demo.yaml up -d
+
+# docker exec -it zs1.example.com /bin/bash -c './install.sh 1'
+# docker exec -it zs2.example.com /bin/bash -c './install.sh 2'
+# docker exec -it zs3.example.com /bin/bash -c './install.sh 3'
+# docker exec -it demo.example.com /bin/bash -c './demo.sh'

@@ -2,8 +2,9 @@
 #
 # 配置Zookeeper-Client环境
 #
-# echo 'export JAVA_HOME=/var/zookeeper/jdk' >> /etc/profile
-# source /etc/profile
 
+# 安装相关依赖
+yum install telnet -y
 
-/var/zookeeper/bin//zkCli.sh -server zk1.examle.com:2181,zk2.examle.com:2181,zk3.examle.com:2181
+# 启动客户端
+/var/zookeeper/bin/zkCli.sh -server zs1.example.com:2181,zs2.example.com:2181,zs3.example.com:2181
