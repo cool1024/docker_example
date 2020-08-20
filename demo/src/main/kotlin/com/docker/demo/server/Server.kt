@@ -5,30 +5,30 @@ import org.apache.zookeeper.KeeperException
 import org.apache.zookeeper.ZooDefs
 import org.apache.zookeeper.ZooKeeper
 import java.lang.RuntimeException
+import kotlin.math.abs
 import kotlin.random.Random
 
-open class Server(protected val zookeeper: ZooKeeper) : LoggerTool() {
+open class Server(private val zookeeper: ZooKeeper) : LoggerTool() {
 
-    private val serverId: String = Random(System.currentTimeMillis()).nextInt().toString()
-
+    private val serverId: String = generateServerId()
     fun create(path: String, maxTryNumber: Int = 10): Boolean {
         return if (maxTryNumber == 0) false
         else {
             try {
+                printInfo(">>>>>>${path}<<<<<")
                 zookeeper.create(
                     path,
                     serverId.toByteArray(),
                     ZooDefs.Ids.OPEN_ACL_UNSAFE,
                     CreateMode.EPHEMERAL
                 )
-                printInfo("SERVER CREATE SUCCESS , ID=[{}]", serverId)
+                printInfo("SERVER CREATE SUCCESS,ID=[{}]", serverId)
                 true
-
             } catch (e: InterruptedException) {
-                printInfo("SERVER INTERRUPTED , ERROR=[{}]", e.toString())
+                printInfo("SERVER INTERRUPTED,ERROR=[{}]", e.toString())
                 return create(path, maxTryNumber.dec())
             } catch (e: KeeperException.NodeExistsException) {
-                printInfo("SERVER CREATE ERROR , ERROR=[{}]", e.toString())
+                printInfo("SERVER CREATE ERROR,ERROR=[{}]", e.toString())
                 false
             }
         }
@@ -40,4 +40,11 @@ open class Server(protected val zookeeper: ZooKeeper) : LoggerTool() {
     fun getId() = serverId
 
     class ServerCreateError : RuntimeException()
+
+    companion object {
+        fun generateServerId(): String {
+            val randomInt = Random(System.nanoTime()).nextInt()
+            return abs(randomInt).toString()
+        }
+    }
 }

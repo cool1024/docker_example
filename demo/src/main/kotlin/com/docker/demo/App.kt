@@ -13,7 +13,7 @@ object App {
             addCandidate(Candidate())
             addCandidate(Candidate())
             addCandidate(Candidate())
+            start()
         }
-        Thread.sleep(1000000)
     }
 }

@@ -18,9 +18,12 @@ docker-compose  \
 -f ./docker/client.yaml \
 down
 
-docker-compose -f ./docker/zookeeper.yaml -f ./docker/client.yaml -f ./docker/demo.yaml up -d
+docker-compose \
+-f ./docker/zookeeper.yaml \
+-f ./docker/client.yaml \
+-f ./docker/demo.yaml up -d
 
-# docker exec -it zs1.example.com /bin/bash -c './install.sh 1'
-# docker exec -it zs2.example.com /bin/bash -c './install.sh 2'
-# docker exec -it zs3.example.com /bin/bash -c './install.sh 3'
-# docker exec -it demo.example.com /bin/bash -c './demo.sh'
+docker exec -it zs1.example.com /bin/bash -c './install.sh 1'
+docker exec -it zs2.example.com /bin/bash -c './install.sh 2'
+docker exec -it zs3.example.com /bin/bash -c './install.sh 3'
+docker exec -it demo.example.com /bin/bash -c './demo.sh'

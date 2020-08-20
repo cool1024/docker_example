@@ -4,7 +4,7 @@ networks:
   zookeeper_test:
 
 services:
-  zookeeper_client:
+  demo_client:
     container_name: demo.example.com
     image: centos:latest
     tty: true

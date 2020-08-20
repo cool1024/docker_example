@@ -9,6 +9,8 @@ services:
       file: base.yaml
       service: zookeeper_base
     container_name: zs1.example.com
+    ports: 
+      - "2181:2181"
     volumes:
       - ../disk/zs1:/var/zookeeper
 
