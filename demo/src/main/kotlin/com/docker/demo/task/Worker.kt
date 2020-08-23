@@ -1,6 +1,6 @@
 package com.docker.demo.task
 
-import com.docker.demo.server.LoggerTool
+import com.docker.demo.zookeeper.LoggerTool
 import org.apache.zookeeper.ZooKeeper
 import org.apache.zookeeper.data.Stat
 
@@ -9,7 +9,7 @@ class Worker(private val zookeeper: ZooKeeper, private val taskId: String) : Log
     private var workData: String
 
     init {
-        val bytes = zookeeper.getData(Task.ZOOKEEPER_TASK_PATH, false, Stat())
+        val bytes = zookeeper.getData(taskId, false, Stat())
         workData = String(bytes)
         printInfo("WORK INIT SUCCESS, ID=[{}]", taskId)
     }

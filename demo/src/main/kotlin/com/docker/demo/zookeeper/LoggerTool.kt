@@ -1,4 +1,4 @@
-package com.docker.demo.server
+package com.docker.demo.zookeeper
 
 import org.slf4j.LoggerFactory
 

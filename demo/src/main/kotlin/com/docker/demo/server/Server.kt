@@ -1,5 +1,6 @@
 package com.docker.demo.server
 
+import com.docker.demo.zookeeper.LoggerTool
 import org.apache.zookeeper.CreateMode
 import org.apache.zookeeper.KeeperException
 import org.apache.zookeeper.ZooDefs

@@ -1,7 +1,8 @@
 package com.docker.demo.server
 
-import com.docker.demo.config.ZookeeperConfig
-import com.docker.demo.prop.RunTimeProp
+import com.docker.demo.zookeeper.LoggerTool
+import com.docker.demo.zookeeper.ZookeeperConfig
+import com.docker.demo.zookeeper.createZookeeperHandle
 import org.apache.zookeeper.CreateMode
 import org.apache.zookeeper.KeeperException
 import org.apache.zookeeper.ZooDefs
@@ -11,7 +12,6 @@ import java.util.concurrent.Executors
 class MasterSelector : LoggerTool() {
 
     private val candidates = arrayListOf<Candidate>()
-    private val zookeeperConfig = RunTimeProp.config<ZookeeperConfig>()!!
 
     init {
         try {
@@ -46,11 +46,5 @@ class MasterSelector : LoggerTool() {
             Follows: ${followers.joinToString { it }}
             """.trimIndent()
         )
-    }
-
-    private fun createZookeeperHandle(): ZooKeeper {
-        return ZooKeeper(zookeeperConfig.connectString, zookeeperConfig.sessionTimeOut) { event ->
-            printInfo("watcher event => [{}]", event)
-        }
     }
 }
