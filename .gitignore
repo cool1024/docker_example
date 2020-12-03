@@ -1,5 +1,6 @@
 jdk
 zookeeper/lib/*.jar
+zookeeper/lib/*.txt
 zookeeper/conf/zoo.cfg.dynamic.next
 disk/*
 .DS_Store
