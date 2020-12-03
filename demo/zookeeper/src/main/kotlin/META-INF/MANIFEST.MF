@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Main-Class: com.cool1024.dubbo.MainKt
+Class-Path: slf4j-log4j12-1.7.25.jar spring-expression-4.3.16.RELEASE.ja
+ r guava-20.0.jar kotlin-stdlib-1.4.20.jar dubbo-2.7.8.jar curator-recip
+ es-4.0.1.jar annotations-13.0.jar curator-client-4.0.1.jar log4j-1.2.17
+ .jar kotlin-stdlib-jdk8-1.4.20.jar audience-annotations-0.5.0.jar curat
+ or-framework-4.0.1.jar spring-context-support-1.0.8.jar commons-logging
+ -1.2.jar fastjson-1.2.70.jar spring-beans-4.3.16.RELEASE.jar slf4j-api-
+ 1.7.25.jar zookeeper-3.4.13.jar gson-2.8.5.jar jline-0.9.94.jar javassi
+ st-3.20.0-GA.jar spring-context-4.3.16.RELEASE.jar spring-aop-4.3.16.RE
+ LEASE.jar snakeyaml-1.20.jar kotlin-stdlib-common-1.4.20.jar spring-cor
+ e-4.3.16.RELEASE.jar netty-all-4.1.25.Final.jar kotlin-stdlib-jdk7-1.4.
+ 20.jar
+

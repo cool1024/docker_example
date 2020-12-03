@@ -1,0 +1,33 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  dubbo_1:
+    container_name: dubbo1.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/zookeeper
+    volumes:
+      - ../disk/demo:/var/zookeeper
+      - ../jdk:/var/zookeeper/jdk
+      - ../bin/dubbo.sh:/var/zookeeper/dubbo.sh
+    networks:
+      - zookeeper_test
+  dubbo_2:
+    container_name: dubbo2.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/zookeeper
+    volumes:
+      - ../disk/demo:/var/zookeeper
+      - ../jdk:/var/zookeeper/jdk
+      - ../bin/dubbo.sh:/var/zookeeper/dubbo.sh
+    networks:
+      - zookeeper_test
+    

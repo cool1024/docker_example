@@ -4,4 +4,4 @@
 #
 ##
 
-docker-compose -f ./docker/zookeeper.yaml -f ./docker/demo.yaml -f ./docker/client.yaml down
+docker-compose -f ./docker/zookeeper.yaml -f ./docker/demo.yaml -f ./docker/dubbo.yaml -f ./docker/client.yaml down

@@ -15,6 +15,7 @@ services:
       - ../disk/demo:/var/zookeeper
       - ../jdk:/var/zookeeper/jdk
       - ../bin/demo.sh:/var/zookeeper/demo.sh
+      - ../bin/dubbo.sh:/var/zookeeper/dubbo.sh
     networks:
       - zookeeper_test
     
