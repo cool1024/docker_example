@@ -18,6 +18,7 @@ fun startProvider() {
     val service: ServiceConfig<MyService> = ServiceConfig()
     service.setApplication(ApplicationConfig("first-dubbo-provider"))
     service.setRegistry(RegistryConfig("zookeeper://zs1.example.com:2181"))
+    service.metadataReportConfig = MetadataReportConfig("zookeeper://zs1.example.com:2181")
     service.setInterface(MyService::class.java)
     service.setRef(MyServiceImpl())
     service.export()

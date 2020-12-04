@@ -3,4 +3,5 @@ zookeeper/lib/*.jar
 zookeeper/lib/*.txt
 zookeeper/conf/zoo.cfg.dynamic.next
 disk/*
+jar/*.jar
 .DS_Store
