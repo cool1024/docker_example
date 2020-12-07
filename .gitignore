@@ -2,6 +2,8 @@ jdk
 zookeeper/lib/*.jar
 zookeeper/lib/*.txt
 zookeeper/conf/zoo.cfg.dynamic.next
+kafka/libs/*.jar
+kafka/libs/*.asc
 disk/*
 jar/*.jar
 .DS_Store

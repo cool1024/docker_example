@@ -30,3 +30,7 @@ You need package demo/dubbo, and put demo.dubbo.main.jar into demo/out/artifacts
 
 1. start `./dubbo.sh`
 2. stop `./stop.sh`
+
+## Kafka Test
+
+[Download kafka](https://archive.apache.org/dist/kafka/1.0.0/kafka_2.11-1.0.0.tgz)
