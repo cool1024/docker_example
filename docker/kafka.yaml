@@ -5,18 +5,19 @@ networks:
 
 services:
   kafka_1:
-    image: centos:latest
-    tty: true
-    stdin_open: true
-    command: /bin/bash
-    working_dir: /var/kafka
-    volumes:
-      - ../jdk:/var/kafka/jdk
-      - ../kafka/bin:/var/kafka/bin
-      - ../kafka/libs:/var/kafka/libs
-      - ../kafka/config:/var/kafka/config
-      - ../disk/kafka:/var/kafka
-      - ../kafka/install.sh:/var/kafka/install.sh
-    networks:
-      - zookeeper_test
-    container_name: kfk.example.com    
+    extends:
+      file: kafka-base.yaml
+      service: kafka_base
+    container_name: kfk1.example.com
+
+  kafka_2:
+    extends:
+      file: kafka-base.yaml
+      service: kafka_base
+    container_name: kfk2.example.com
+
+  kafka_3:
+    extends:
+      file: kafka-base.yaml
+      service: kafka_base
+    container_name: kfk3.example.com
