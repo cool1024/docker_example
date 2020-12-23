@@ -1,0 +1,53 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  redis_1:
+    extends:
+      file: redis-base.yaml
+      service: redis_base
+    container_name: redis1.example.com
+    volumes:
+      - ../disk/redis1:/var/redis
+  
+  redis_2:
+    extends:
+      file: redis-base.yaml
+      service: redis_base
+    container_name: redis2.example.com
+    volumes:
+      - ../disk/redis2:/var/redis
+  
+  redis_3:
+    extends:
+      file: redis-base.yaml
+      service: redis_base
+    container_name: redis3.example.com
+    volumes:
+      - ../disk/redis3:/var/redis
+  
+  redis_4:
+    extends:
+      file: redis-base.yaml
+      service: redis_base
+    container_name: redis4.example.com
+    volumes:
+      - ../disk/redis4:/var/redis
+  
+  redis_5:
+    extends:
+      file: redis-base.yaml
+      service: redis_base
+    container_name: redis5.example.com
+    volumes:
+      - ../disk/redis5:/var/redis
+
+  redis_6:
+    extends:
+      file: redis-base.yaml
+      service: redis_base
+    container_name: redis6.example.com
+    volumes:
+      - ../disk/redis6:/var/redis

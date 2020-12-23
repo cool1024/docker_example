@@ -4,6 +4,9 @@ zookeeper/lib/*.txt
 zookeeper/conf/zoo.cfg.dynamic.next
 kafka/libs/*.jar
 kafka/libs/*.asc
+redis/*.tar.gz
+redis/redis-cli
+redis/redis-server
 disk/*
 jar/*.jar
 .DS_Store

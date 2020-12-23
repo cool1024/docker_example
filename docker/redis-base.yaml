@@ -1,0 +1,17 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  redis_base:
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/redis
+    volumes:
+      - ../redis:/var/redis/resource
+    networks:
+      - zookeeper_test
+    
