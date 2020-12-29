@@ -10,6 +10,7 @@ services:
     stdin_open: true
     command: /bin/bash
     working_dir: /var/redis
+    privileged: true
     volumes:
       - ../redis:/var/redis/resource
     networks:

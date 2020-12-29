@@ -6,6 +6,8 @@ REDIS_RESOURCE=/var/redis/resource
 
 echo "Install redis => $BROKER_ID"
 
+source $(dirname $0)/util.sh
+
 function compile_redis() {
     echo "compile redis"
     tar -xzvf "${REDIS_RESOURCE}/redis-6.0.6.tar.gz"
@@ -29,5 +31,6 @@ function start() {
    $REDIS_PATH/redis-server $REDIS_RESOURCE/redis.conf &
 }
 
+prepare_env
 prepare_redis
 start
