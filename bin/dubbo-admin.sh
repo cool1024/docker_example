@@ -7,4 +7,4 @@ echo 'export PATH=$PATH:$JAVA_HOME/bin' >> /etc/profile
 source /etc/profile
 
 
-java -jar dubbo-admin-server-0.2.0-SNAPSHOT.jar
+java -jar dubbo-admin-server-0.2.0-SNAPSHOT.jar &

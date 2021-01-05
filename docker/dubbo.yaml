@@ -28,6 +28,7 @@ services:
       - ../disk/demo:/var/zookeeper
       - ../jdk:/var/zookeeper/jdk
       - ../bin/dubbo.sh:/var/zookeeper/dubbo.sh
+      - ../bin/dubbo-admin.sh:/var/zookeeper/dubbo-admin.sh
     ports: 
       - "8080:8080"
     networks:

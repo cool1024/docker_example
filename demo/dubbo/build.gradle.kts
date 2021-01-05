@@ -12,6 +12,9 @@ dependencies {
     val dubbo_version = "2.7.8"
     implementation("org.apache.dubbo:dubbo:${dubbo_version}")
     implementation("org.apache.dubbo:dubbo-dependencies-zookeeper:${dubbo_version}")
+    val brave_version = "5.9.5"
+    implementation("io.zipkin.brave:brave-instrumentation-dubbo-rpc:${brave_version}")
+
     testImplementation(kotlin("test-junit"))
 }
 

@@ -17,6 +17,9 @@ fun main(args: Array<String>) {
 fun startProvider() {
     val service: ServiceConfig<MyService> = ServiceConfig()
     service.setApplication(ApplicationConfig("first-dubbo-provider"))
+    service.group = "dev"
+    service.version = "1.0.0"
+    service.provider.filter="tracing"
     service.setRegistry(RegistryConfig("zookeeper://zs1.example.com:2181"))
     service.metadataReportConfig = MetadataReportConfig("zookeeper://zs1.example.com:2181")
     service.setInterface(MyService::class.java)
@@ -30,9 +33,15 @@ fun startProvider() {
 fun runConsumer(name: String) {
     val reference: ReferenceConfig<MyService> = ReferenceConfig()
     reference.setApplication(ApplicationConfig("first-dubbo-consumer"))
+    reference.group = "dev"
+    reference.version = "1.0.0"
+    reference.consumer.filter="tracing"
     reference.setRegistry(RegistryConfig("zookeeper://zs1.example.com:2181"))
     reference.setInterface(MyService::class.java)
     val service: MyService = reference.get()
-    val message: String = service.sayHello(name)
-    println(message)
+    while (true) {
+        val message: String = service.sayHello(name)
+        println(message)
+        Thread.sleep(1000)
+    }
 }

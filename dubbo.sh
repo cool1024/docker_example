@@ -27,6 +27,6 @@ docker-compose \
 docker exec -it zs1.example.com /bin/bash -c './install.sh 1'
 docker exec -it zs2.example.com /bin/bash -c './install.sh 2'
 docker exec -it zs3.example.com /bin/bash -c './install.sh 3'
-docker exec -it dubbo1.example.com /bin/bash -c './dubbo.sh'
-docker exec -it dubbo2.example.com /bin/bash -c './dubbo-admin.sh'
-# docker exec -it dubbo2.example.com /bin/bash -c './dubbo.sh' cool1024
+docker exec  dubbo2.example.com /bin/bash -c './dubbo-admin.sh'
+docker exec  dubbo1.example.com /bin/bash -c './dubbo.sh'
+docker exec -it dubbo2.example.com /bin/bash -c './dubbo.sh cool1024'
