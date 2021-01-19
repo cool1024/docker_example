@@ -1,0 +1,22 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  skywalking:
+    container_name: skywalking.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/skywalking
+    volumes:
+      - ../disk/skywalking:/var/skywalking
+      - ../resource/skywalking:/var/skywalking/resource
+      - ../jdk:/var/skywalking/jdk
+    ports: 
+      - "12800:12800"
+      - "8080:8080"
+    networks:
+      - zookeeper_test

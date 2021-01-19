@@ -13,6 +13,9 @@ resource/redis/redis-server
 resource/memcached/*.tar.gz
 resource/memcached/memcached-server
 
+resource/skywalking/*.tar.gz
+resource/skywalking/apache-skywalking-apm-bin
+
 disk/*
 jar/*.jar
 .DS_Store
