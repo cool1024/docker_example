@@ -12,7 +12,7 @@ services:
     working_dir: /var/redis
     privileged: true
     volumes:
-      - ../redis:/var/redis/resource
+      - ../resource/redis:/var/redis/resource
     networks:
       - zookeeper_test
     

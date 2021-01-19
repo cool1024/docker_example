@@ -12,12 +12,12 @@ services:
     working_dir: /var/kafka
     volumes:
       - ../jdk:/var/kafka/jdk
-      - ../kafka/bin:/var/kafka/bin
-      - ../kafka/libs:/var/kafka/libs
-      - ../kafka/config:/var/kafka/config
+      - ../resource/kafka/bin:/var/kafka/bin
+      - ../resource/kafka/libs:/var/kafka/libs
+      - ../resource/kafka/config:/var/kafka/config
       - ../disk/kafka:/var/kafka
-      - ../kafka/install.sh:/var/kafka/install.sh
-      - ../kafka/test:/var/kafka/test
+      - ../resource/kafka/install.sh:/var/kafka/install.sh
+      - ../resource/kafka/test:/var/kafka/test
     networks:
       - zookeeper_test
     
