@@ -12,10 +12,6 @@ services:
     working_dir: /var/zookeeper
     volumes:
       - ../jdk:/var/zookeeper/jdk
-      - ../resource/zookeeper/bin:/var/zookeeper/bin
-      - ../resource/zookeeper/lib:/var/zookeeper/lib
-      - ../resource/zookeeper/conf:/var/zookeeper/conf
-      - ../bin/install.sh:/var/zookeeper/install.sh
+      - ../resource/zookeeper:/var/zookeeper
     networks:
       - zookeeper_test
-    
