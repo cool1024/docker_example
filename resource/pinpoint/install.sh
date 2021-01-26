@@ -24,6 +24,7 @@ function download_hbase() {
 function start_hbase() {
     cd $HBASE_PATH
     ./bin/start-hbase.sh
+    ./bin/hbase shell ./scripts/hbase-create.hbase
     # init database
     # /scripts/hbase-create.hbase
 }
@@ -38,4 +39,8 @@ function download_pinpoint() {
             tar -xzvf $TARGET_FILE
         fi
     done
+}
+
+function start_pinpoint() {
+    
 }

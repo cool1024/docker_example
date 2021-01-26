@@ -18,4 +18,3 @@ services:
       - ../bin/dubbo.sh:/var/zookeeper/dubbo.sh
     networks:
       - zookeeper_test
-    
