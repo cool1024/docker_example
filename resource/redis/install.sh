@@ -23,12 +23,16 @@ function prepare_redis() {
     echo "prepare redis"
     cp ./resource/redis-server /var/redis
     cp ./resource/redis-cli /var/redis
+    cp $REDIS_RESOURCE/redis.conf /var/redis
+    openip="redis$BROKER_ID.example.com"
+    sed -i "s/7000/700$BROKER_ID/g" /var/redis/redis.conf
+    sed -i "s/openip/redis$BROKER_ID.example.com/g" /var/redis/redis.conf
 }
 
 
 function start() {
    echo "start redis..."
-   $REDIS_PATH/redis-server $REDIS_RESOURCE/redis.conf &
+   $REDIS_PATH/redis-server $REDIS_PATH/redis.conf &
 }
 
 prepare_env

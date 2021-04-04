@@ -11,20 +11,24 @@ services:
     container_name: zs1.example.com
     volumes:
       - ../disk/zs1:/var/zookeeper
+    ports: 
+      - "2181:2181"
 
   zookeeper_2:
     extends:
-      file: base.yaml
+      file: zookeeper-base.yaml
       service: zookeeper_base
     container_name: zs2.example.com
     volumes:
       - ../disk/zs2:/var/zookeeper
-
+    ports: 
+      - "2182:2182"
   zookeeper_3:
     extends:
-      file: base.yaml
+      file: zookeeper-base.yaml
       service: zookeeper_base
     container_name: zs3.example.com
     volumes:
       - ../disk/zs3:/var/zookeeper
-    
+    ports: 
+      - "2183:2183"

@@ -12,6 +12,6 @@ services:
     working_dir: /var/zookeeper
     volumes:
       - ../jdk:/var/zookeeper/jdk
-      - ../resource/zookeeper:/var/zookeeper
+      - ../resource/zookeeper:/var/zookeeper/resource
     networks:
       - zookeeper_test

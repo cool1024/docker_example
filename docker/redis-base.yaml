@@ -13,6 +13,4 @@ services:
     privileged: true
     volumes:
       - ../resource/redis:/var/redis/resource
-    networks:
-      - zookeeper_test
     

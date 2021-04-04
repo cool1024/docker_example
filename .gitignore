@@ -19,3 +19,4 @@ resource/skywalking/apache-skywalking-apm-bin
 disk/*
 jar/*.jar
 .DS_Store
+*.tar.gz

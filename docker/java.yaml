@@ -1,0 +1,20 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  java:
+    container_name: java.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/java
+    volumes:
+      - ../disk/java:/var/java
+      - ../jdk:/var/java/jdk
+    networks:
+      - zookeeper_test
+    ports: 
+      - "8080:8080"

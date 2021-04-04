@@ -11,6 +11,8 @@ services:
     container_name: redis1.example.com
     volumes:
       - ../disk/redis1:/var/redis
+    ports:
+      - "7001:7001"
   
   redis_2:
     extends:
@@ -19,7 +21,9 @@ services:
     container_name: redis2.example.com
     volumes:
       - ../disk/redis2:/var/redis
-  
+    ports:
+      - "7002:7002"
+
   redis_3:
     extends:
       file: redis-base.yaml
@@ -27,7 +31,9 @@ services:
     container_name: redis3.example.com
     volumes:
       - ../disk/redis3:/var/redis
-  
+    ports:
+      - "7003:7003"
+
   redis_4:
     extends:
       file: redis-base.yaml
@@ -35,7 +41,9 @@ services:
     container_name: redis4.example.com
     volumes:
       - ../disk/redis4:/var/redis
-  
+    ports:
+      - "7004:7004"
+
   redis_5:
     extends:
       file: redis-base.yaml
@@ -43,6 +51,8 @@ services:
     container_name: redis5.example.com
     volumes:
       - ../disk/redis5:/var/redis
+    ports:
+      - "7005:7005"
 
   redis_6:
     extends:
@@ -51,3 +61,5 @@ services:
     container_name: redis6.example.com
     volumes:
       - ../disk/redis6:/var/redis
+    ports:
+      - "7006:7006"

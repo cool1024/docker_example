@@ -1,8 +1,9 @@
 #!/bin/bash
+
+##
+# DUBBO ENV SHELL
 #
-# 启动DUBBO项目容器
-#
-# 注意，这个脚本会清空之前保存的所有项目数据
+# PAY ATTENTION: THIS SHELL WILL CLEAN ALL DATA INT THIS PROJECT.
 ##
 
 # 清空旧的磁盘文件
@@ -19,14 +20,14 @@ docker-compose  \
 -f ./docker/client.yaml \
 down
 
-docker-compose \
--f ./docker/zookeeper.yaml \
--f ./docker/client.yaml \
--f ./docker/dubbo.yaml up -d
+# docker-compose \
+# -f ./docker/zookeeper.yaml \
+# -f ./docker/client.yaml \
+# -f ./docker/dubbo.yaml up -d
 
-docker exec -it zs1.example.com /bin/bash -c './install.sh 1'
-docker exec -it zs2.example.com /bin/bash -c './install.sh 2'
-docker exec -it zs3.example.com /bin/bash -c './install.sh 3'
-docker exec  dubbo2.example.com /bin/bash -c './dubbo-admin.sh'
-docker exec  dubbo1.example.com /bin/bash -c './dubbo.sh'
-docker exec -it dubbo2.example.com /bin/bash -c './dubbo.sh cool1024'
+# docker exec -it zs1.example.com /bin/bash -c './resource/install.sh 1'
+# docker exec -it zs2.example.com /bin/bash -c './resource/install.sh 2'
+# docker exec -it zs3.example.com /bin/bash -c './resource/install.sh 3'
+# docker exec  dubbo2.example.com /bin/bash -c './dubbo-admin.sh'
+# docker exec  dubbo1.example.com /bin/bash -c './dubbo.sh'
+# docker exec -it dubbo2.example.com /bin/bash -c './dubbo.sh cool1024'
