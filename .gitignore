@@ -16,6 +16,10 @@ resource/memcached/memcached-server
 resource/skywalking/*.tar.gz
 resource/skywalking/apache-skywalking-apm-bin
 
+resource/mysql/boost*
+resource/mysql/mysql*
+resource/mysql/rpcsvc*
+
 disk/*
 jar/*.jar
 .DS_Store
