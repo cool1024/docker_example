@@ -13,7 +13,7 @@ services:
     working_dir: /var/memcached
     volumes:
       - ../disk/memcached1:/var/memcached
-      - ../memcached:/var/memcached/resource
+      - ../resource/memcached:/var/memcached/resource
     networks:
       - zookeeper_test
     

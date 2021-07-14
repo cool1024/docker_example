@@ -86,10 +86,14 @@ function init_mysql() {
     # CREATE USER 'app'@'%' IDENTIFIED BY 'app';
 }
 
+function resume_mysql() {
+    export PATH=$PATH:/var/mysql/mysql/bin
+    groupadd mysql
+    useradd -r -g mysql -s /bin/false mysql
+    mysqld_safe --user=mysql &
+}
+
 # prepare_source
 # install_rpcsv
 # compile_source
-# groupadd mysql
-# useradd -r -g mysql -s /bin/false mysql
-export PATH=$PATH:/var/mysql/mysql/bin
-mysqld_safe --user=mysql &
+resume_mysql()

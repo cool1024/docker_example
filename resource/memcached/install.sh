@@ -11,14 +11,14 @@ function compile_memcached() {
     tar -xzvf "${WORK_RESOURCE}/memcached-1.6.9.tar.gz"
     cd $WORK_PATH/memcached-1.6.9
     yum -y install gcc automake autoconf libtool libevent libevent-devel make
-    ./configure --prefix=/var/memcached/memcached-server
+    ./configure --prefix=/var/memcached/resource/memcached-server
     make && make test
     make install
 }
 
 function start_memcached() {
-    /var/memcached/memcached-server/bin/memcached -u root -p 11211 -m 64m -vv
+    /var/memcached/resource/memcached-server/bin/memcached -u root -p 11211 -m 64m -vv
 }
 
-# compile_memcached
+compile_memcached
 start_memcached
