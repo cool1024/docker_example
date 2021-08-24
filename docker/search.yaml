@@ -1,0 +1,20 @@
+version: '2'
+
+networks:
+  zookeeper_test:
+
+services:
+  demo_client:
+    container_name: search.example.com
+    image: centos:latest
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    working_dir: /var/search
+    volumes:
+      - ../resource/elasticsearch:/var/search
+    ports: 
+      - "9200:9200"
+      - "5601:5601"
+    networks:
+      - zookeeper_test

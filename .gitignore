@@ -20,6 +20,8 @@ resource/mysql/boost*
 resource/mysql/mysql*
 resource/mysql/rpcsvc*
 
+resource/elasticsearch
+
 disk/*
 jar/*.jar
 .DS_Store

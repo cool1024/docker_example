@@ -96,4 +96,4 @@ function resume_mysql() {
 # prepare_source
 # install_rpcsv
 # compile_source
-resume_mysql()
+resume_mysql
